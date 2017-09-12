@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="Title_news">Title</string>
+    <string name="section_news">section</string>
+    <string name="news_date">Date</string>
+    <string name="dateParsing">Problem with parsing date</string>
+    <string name="error_connection">No network connection available</string>
+    <string name="news_number2" translatable="false">number_of_news</string>
+    <string name="news_number" translatable="false">20</string>
+    <string name="order_by_key">order-by</string>
+    <string name="order_by">newest</string>
+    <string name="http_Problem">Problem with http request</string>
+    <string name="url_Problem">Problem building the URL</string>
+    <string name="read_Problem">Error occurred</string>
+    <string name="json_Problem">Problem receiving JSON results</string>
+    <string name="json_Problem2">Problem parsing JSON results</string>
+
+</resources>
