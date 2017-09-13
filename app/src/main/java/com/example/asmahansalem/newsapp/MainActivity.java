@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     private static final String REQUEST_URL = "http://content.guardianapis.com/search?";
     private static final String API_KEY = "13fd1877-8db2-441b-b2d0-d501808dcb86";
-    // private static final String SHOW_FIELDS = "show-fields";
     private static final int LOADER_ID = 1;
     private NewsAdapter newsAdapter;
     private TextView emptyNodata;
@@ -101,9 +99,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         uriBuilder.appendQueryParameter("page-size", newsNumber);
         uriBuilder.appendQueryParameter("order-by", orderBy);
         uriBuilder.appendQueryParameter("api-key", API_KEY);
-        // uriBuilder.appendQueryParameter("thumbnail", SHOW_FIELDS);
 
-        return new loaderNews(this, uriBuilder.toString());
+        return new LoaderNews(this, uriBuilder.toString());
     }
 
     @Override
