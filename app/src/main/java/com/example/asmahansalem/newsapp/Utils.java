@@ -2,8 +2,7 @@ package com.example.asmahansalem.newsapp;
 
 import java.net.URL;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -29,7 +28,7 @@ import java.util.List;
 final class Utils {
     /**
      * Here is a Java code source for class Utils With full original notes
-     *
+     * <p>
      * https://github.com/DariaKalashnik/News/blob/master/app/src/main/java/com/example/android/news/QueryUtils.java
      */
     private static final String LOG_TAG = Utils.class.getSimpleName();
@@ -41,8 +40,7 @@ final class Utils {
     private static final String Title = "webTitle";
     private static final String Date = "webPublicationDate";
     private static final String Url = "webUrl";
-    private static final String FIELDS = "fields";
-    private static final String THUMBNAIL = "thumbnail";
+
 
     /**
      * Create a private constructor because no one should ever create a {@link Utils} object.
@@ -78,6 +76,7 @@ final class Utils {
         }
         return url;
     }
+
     // Make an HTTP request to the given URL and return a String as the response
     private static String makeHttpRequest(URL url) throws IOException {
         String jsonResponse = "";
@@ -147,26 +146,15 @@ final class Utils {
             JSONObject baseJSONObject = new JSONObject(newsJSON);
             JSONObject responseJSONObject = baseJSONObject.getJSONObject(Response);
             JSONArray newsResults = responseJSONObject.getJSONArray(Results);
-            for (int i = 0; i < newsResults.length(); i++ ) {
+            for (int i = 0; i < newsResults.length(); i++) {
                 JSONObject info = newsResults.getJSONObject(i);
                 String section = info.getString(Section);
                 String date = info.getString(Date);
                 String title = info.getString(Title);
                 String url = info.getString(Url);
-               /** Bitmap bitmap = null;
-                String thumbnail;
-                JSONObject fieldsJson = info.getJSONObject(FIELDS);
-                thumbnail = fieldsJson.getString(THUMBNAIL);
 
-                try {
-                    Log.v(LOG_TAG, "bitmap");
-                    URL url2 = new URL(thumbnail);
-                    bitmap = BitmapFactory.decodeStream(url2.openConnection().getInputStream());
 
-                } catch (IOException e) {
-                    Log.e(LOG_TAG, "Error", e);
-                }**/
-                News news = new News(section, title, date,/**bitmap,**/ url);
+                News news = new News(section, title, date, "author", url);
                 mNews.add(news);
             }
 
