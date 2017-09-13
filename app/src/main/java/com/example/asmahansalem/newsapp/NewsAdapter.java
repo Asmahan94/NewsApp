@@ -50,7 +50,6 @@ class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         viewHolder.title.setText(news.getTitle());
         viewHolder.section.setText(news.getSection());
         viewHolder.date.setText(makeDateFormat(news.getDate()));
-        //  viewHolder.imageView.setImageBitmap(news.getBitmap());
         viewHolder.onListClick(mNews.get(position), mListener);
     }
 
@@ -97,8 +96,7 @@ class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         TextView section;
         TextView date;
         ImageView imageView;
-
-
+        
         ViewHolder(View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.Title_news);
