@@ -1,22 +1,17 @@
 package com.example.asmahansalem.newsapp;
 
 import java.net.URL;
-
-
 import android.text.TextUtils;
 import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +35,7 @@ final class Utils {
     private static final String Title = "webTitle";
     private static final String Date = "webPublicationDate";
     private static final String Url = "webUrl";
-
-
+    
     /**
      * Create a private constructor because no one should ever create a {@link Utils} object.
      * This class is only meant to hold static variables and methods, which can be accessed
@@ -152,8 +146,7 @@ final class Utils {
                 String date = info.getString(Date);
                 String title = info.getString(Title);
                 String url = info.getString(Url);
-
-
+                
                 News news = new News(section, title, date, "author", url);
                 mNews.add(news);
             }
