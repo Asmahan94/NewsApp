@@ -10,15 +10,15 @@ class News {
     final private String section;
     final private String title;
     final private String date;
-    //final private Bitmap mBitmap;
+    final private String author;
     final private String url;
 
 
-    News(String section, String title, String date,  /**Bitmap bitmap,**/String url) {
+    News(String section, String title, String date,  String author,String url) {
         this.section = section;
         this.title = title;
         this.date = date;
-        //this.mBitmap = bitmap;
+        this.author = author;
         this.url = url;
     }
 
@@ -34,11 +34,12 @@ class News {
         return date;
     }
 
+    String getAuthor() {
+        return author;
+    }
+
     String getURL() {
         return url;
     }
-    /**  public Bitmap getBitmap() {
-     return mBitmap;
-     }*/
 
 }
